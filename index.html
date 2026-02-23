@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover Page Generator</title>
+
+    <!-- External Library (html2pdf) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Cover Page Generator</h1>
+
+    <div class="input-group">
+        <label>Type</label>
+        <select id="type">
+            <option>Assignment</option>
+            <option>Lab Report</option>
+            <option>Project Report</option>
+        </select>
+    </div>
+
+    <div class="input-group">
+        <label>No.</label>
+        <input type="text" id="no">
+    </div>
+
+    <div class="input-group">
+        <label>Topic</label>
+        <input type="text" id="topic">
+    </div>
+
+    <div class="input-group">
+        <label>Submitted By</label>
+        <input type="text" id="by">
+    </div>
+
+    <div class="input-group">
+        <label>Submitted To</label>
+        <input type="text" id="to">
+    </div>
+
+    <button onclick="generatePDF()">Export PDF</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
