@@ -1,53 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cover Page Generator</title>
-
-    <!-- External Library (html2pdf) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 
 <div class="container">
     <h1>Cover Page Generator</h1>
 
-    <div class="input-group">
-        <label>Type</label>
-        <select id="type">
-            <option>Assignment</option>
-            <option>Lab Report</option>
-            <option>Project Report</option>
-        </select>
-    </div>
+    <label>Type</label>
+    <select id="type">
+        <option>Assignment</option>
+        <option>Lab Report</option>
+        <option>Project Report</option>
+    </select>
 
-    <div class="input-group">
-        <label>No.</label>
-        <input type="text" id="no">
-    </div>
+    <label>No.</label>
+    <input type="text" id="no">
 
-    <div class="input-group">
-        <label>Topic</label>
-        <input type="text" id="topic">
-    </div>
+    <label>Topic</label>
+    <input type="text" id="topic">
 
-    <div class="input-group">
-        <label>Submitted By</label>
-        <input type="text" id="by">
-    </div>
+    <label>Submitted By</label>
+    <input type="text" id="by">
 
-    <div class="input-group">
-        <label>Submitted To</label>
-        <input type="text" id="to">
-    </div>
+    <label>Submitted To</label>
+    <input type="text" id="to">
 
     <button onclick="generatePDF()">Export PDF</button>
+</div>
 
+<!-- Hidden Cover Layout -->
+<div id="cover" class="cover">
+    <div class="border">
+        <h2 id="c_type"></h2>
+        <h3 id="c_no"></h3>
+
+        <div class="topic">
+            <h3>Topic</h3>
+            <p id="c_topic"></p>
+        </div>
+
+        <div class="bottom">
+            <div>
+                <h4>Submitted By</h4>
+                <p id="c_by"></p>
+            </div>
+
+            <div>
+                <h4>Submitted To</h4>
+                <p id="c_to"></p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="script.js"></script>
