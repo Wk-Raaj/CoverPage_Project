@@ -1,30 +1,24 @@
 function generatePDF() {
-    const type = document.getElementById("type").value;
-    const no = document.getElementById("no").value;
-    const topic = document.getElementById("topic").value;
-    const by = document.getElementById("by").value;
-    const to = document.getElementById("to").value;
 
-    let content = `
-        <div style="text-align: center; font-family: Arial;">
-            <h1>${type}</h1>
-            <h3>No. : ${no}</h3>
-            <h3>Topic : ${topic}</h3>
-            <h4>Submitted By : ${by}</h4>
-            <h4>Submitted To : ${to}</h4>
-        </div>
-    `;
+    document.getElementById("c_type").innerText =
+        document.getElementById("type").value;
 
-    let element = document.createElement("div");
-    element.innerHTML = content;
+    document.getElementById("c_no").innerText =
+        "No: " + document.getElementById("no").value;
 
-    var opt = {
-      margin:       0.5,
-      filename:     `Cover-${type}.pdf`,
-      image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2 },
-      jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-    };
+    document.getElementById("c_topic").innerText =
+        document.getElementById("topic").value;
 
-    html2pdf().from(element).set(opt).save();
+    document.getElementById("c_by").innerText =
+        document.getElementById("by").value;
+
+    document.getElementById("c_to").innerText =
+        document.getElementById("to").value;
+
+    let element = document.getElementById("cover");
+    element.style.display = "block";
+
+    html2pdf().from(element).save().then(() => {
+        element.style.display = "none";
+    });
 }
